@@ -1,0 +1,10 @@
+resources:
+  - ../base
+generatorOptions:
+  disableNameSuffixHash: true
+configMapGenerator:
+  - name: tls-config
+    files:
+      - z-custom-my.cnf
+patches:
+  - path: deployment.yaml

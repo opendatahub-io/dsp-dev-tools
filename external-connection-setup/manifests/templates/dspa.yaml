@@ -1,0 +1,26 @@
+apiVersion: datasciencepipelinesapplications.opendatahub.io/v1alpha1
+kind: DataSciencePipelinesApplication
+metadata:
+  name: extrenal-storage
+spec:
+  dspVersion: v2
+  database:
+    externalDB:
+      host: <DB_HOST>
+      passwordSecret:
+        key: customkey
+        name: dbsecret
+      pipelineDBName: <DATABASE>
+      port: <DB_PORT>
+      username: <DB_USER>
+  objectStorage:
+    externalStorage:
+      bucket: <MINIO_BUCKET>
+      host: <MINIO_HOST>
+      s3CredentialsSecret:
+        accessKey: customaccessKey
+        secretKey: customsecretKey
+        secretName: s3secret
+      scheme: http
+  mlpipelineUI:
+    image: 'quay.io/opendatahub/ds-pipelines-frontend:latest'

@@ -1,0 +1,11 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: minio
+spec:
+  to:
+    kind: Service
+    name: minio-sample
+  port:
+    targetPort: http
+  wildcardPolicy: None
