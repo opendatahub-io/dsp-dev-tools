@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cloudbeaver
+spec:
+  template:
+    spec:
+      volumes:
+        - name: configs
+          configMap:
+            name: cloudbeaver-config
+
+        - name: ca-bundle
+          configMap:
+            name: odh-trusted-ca-bundle
+
+      containers:
+        - name: cloudbeaver
+          volumeMounts:
+            - name: configs
+              mountPath: /opt/cloudbeaver/conf
+            - name: ca-bundle
+              mountPath: /etc/ssl/certs/custom-ca.crt
+              subPath: custom-ca.crt

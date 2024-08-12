@@ -1,0 +1,21 @@
+kind: NetworkPolicy
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: cloudbeaver
+spec:
+  podSelector:
+    matchLabels:
+      # For dsp with mariadb option
+      app: mariadb-sample # EDIT THIS
+      # For kubeflow manifest deployment
+      #      app: mysql
+      #      application-crd-id: kubeflow-pipelines
+  ingress:
+    - ports:
+        - protocol: TCP
+          port: 3306
+      from:
+        - podSelector: {}
+          namespaceSelector: {}
+  policyTypes:
+    - Ingress

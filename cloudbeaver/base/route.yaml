@@ -1,0 +1,16 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: cloudbeaver
+  labels:
+    app: cloudbeaver
+spec:
+  to:
+    kind: Service
+    name: cloudbeaver
+  port:
+    targetPort: web
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Allow
+  wildcardPolicy: None
