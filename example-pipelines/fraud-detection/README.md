@@ -33,4 +33,4 @@ oc login --server=<cluster>
 ./build_.yaml.py
 ```
 
-Will output a yaml file to deploy directly in DSP.
+Will output a yaml file to deploy directly in DSP. You can also find the yaml file here: [fraud_detection.yaml](fraud_detection.yaml)
