@@ -34,3 +34,11 @@ oc login --server=<cluster>
 ```
 
 Will output a yaml file to deploy directly in DSP. You can also find the yaml file here: [fraud_detection.yaml](fraud_detection.yaml)
+
+Or build the version where caching is disabled: 
+
+```bash
+./build_yaml_no_cache.py
+```
+
+You can also find this yaml here: [fraud_detection_no_cache.yaml](fraud_detection_no_cache.yaml)
