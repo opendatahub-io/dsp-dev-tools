@@ -6,7 +6,7 @@ spec:
   podSelector:
     matchLabels:
       # For dsp with mariadb option
-      app: mariadb-sample # EDIT THIS
+      app: mariadb-dspa # EDIT THIS
       # For kubeflow manifest deployment
       #      app: mysql
       #      application-crd-id: kubeflow-pipelines

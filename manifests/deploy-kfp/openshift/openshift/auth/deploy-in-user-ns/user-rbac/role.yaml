@@ -1,0 +1,29 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: view-runs
+rules:
+  - apiGroups:
+      - pipelines.kubeflow.org
+    resources:
+      - runs
+      - experiments
+      - jobs
+      - pipelines
+      - artifacts
+    verbs:
+      - get
+      - create
+      - delete
+      - deletecollection
+      - patch
+      - update
+      - list
+      - terminate
+      - retry
+  - apiGroups:
+      - ""
+    resources:
+      - secrets
+    verbs:
+      - get

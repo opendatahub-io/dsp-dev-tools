@@ -48,8 +48,7 @@ with open('output_driver.env', 'w') as l:
         write_json("container", l)
         l.write(f"--cached_decision_path={args[args.index('--cached_decision_path')+1]}\n")
         l.write(f"--pod_spec_patch_path={args[args.index('--pod_spec_patch_path')+1]}\n")
-        l.write(f"--kubernetes_config={args[args.index('--kubernetes_config')+1]}\n")
+        write_json("kubernetes_config", l)
 
     l.write(f"--iteration_index={args[args.index('--iteration_index')+1]}\n")
     l.write(f"--condition_path={args[args.index('--condition_path')+1]}\n")
-    l.write(f"--mlPipelineServiceTLSEnabled={args[args.index('--mlPipelineServiceTLSEnabled')+1]}\n")
