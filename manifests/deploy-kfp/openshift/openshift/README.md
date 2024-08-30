@@ -17,7 +17,7 @@ REPO=https://github.com/kubeflow/pipelines
 BRANCH=master
 ```
 
-### Deploy base (no auth/multi-user)
+### Deploy base no auth/multi-user
 
 ```bash
 git clone https://github.com/opendatahub-io/dsp-dev-tools.git
@@ -25,7 +25,7 @@ cd manifests/deploy-kfp/openshift/openshift/base
 ./add_resources.sh $REPO $BRANCH
 ```
 
-### Deploy base (no auth/multi-user)
+### Deploy with auth/multi-user
 
 ```bash
 git clone https://github.com/opendatahub-io/dsp-dev-tools.git
