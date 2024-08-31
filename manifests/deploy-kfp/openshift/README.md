@@ -1,4 +1,4 @@
-This folder contains manifests to help with deploying Kubeflow Standalone on Openshift. 
+This folder contains manifests to help with deploying Kubeflow Pipelines Standalone on Openshift. 
 
 You can deploy standard, or with multi-user auth enabled. 
 Before deploying, you will first need to set the remote fork from which to pull the base manifests from. From this we 
