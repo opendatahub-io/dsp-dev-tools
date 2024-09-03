@@ -21,16 +21,19 @@ BRANCH=master
 
 ```bash
 git clone https://github.com/opendatahub-io/dsp-dev-tools.git
-cd manifests/deploy-kfp/openshift/openshift/base
+cd manifests/deploy-kfp/openshift/base
 ./add_resources.sh $REPO $BRANCH
+kustomize build . | oc -n kubeflow apply -f -
 ```
 
 ### Deploy with auth/multi-user
 
 ```bash
 git clone https://github.com/opendatahub-io/dsp-dev-tools.git
-cd manifests/deploy-kfp/openshift/auth
+cd manifests/deploy-kfp/openshift/base
 ./add_resources.sh $REPO $BRANCH
+cd ../auth
+kustomize build . | oc -n kubeflow apply -f -
 ```
 
 ### Add your own images: 
