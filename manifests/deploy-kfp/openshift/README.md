@@ -29,7 +29,7 @@ cd manifests/deploy-kfp/openshift/openshift/base
 
 ```bash
 git clone https://github.com/opendatahub-io/dsp-dev-tools.git
-cd manifests/deploy-kfp/openshift/openshift/auth
+cd manifests/deploy-kfp/openshift/auth
 ./add_resources.sh $REPO $BRANCH
 ```
 
