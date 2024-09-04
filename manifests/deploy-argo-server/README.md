@@ -7,6 +7,6 @@ the more 'specialized-for-data-scientists' views provided by the DSP or KFP UIs
 
 ```bash
 git clone https://github.com/opendatahub-io/dsp-dev-tools.git
-cd manifests/deploy-standalone-argo-server
-oc apply -k -n <some-namespace> openshift
+cd manifests/deploy-argo-server
+oc apply -n <some-namespace> -k standalone/openshift
 ```
