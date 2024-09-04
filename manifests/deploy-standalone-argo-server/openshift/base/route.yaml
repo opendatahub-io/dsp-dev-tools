@@ -1,0 +1,17 @@
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: argo-ui
+  annotations:
+    openshift.io/host.generated: 'true'
+spec:
+  to:
+    kind: Service
+    name: argo-server
+    weight: 100
+  port:
+    targetPort: web
+  tls:
+    termination: passthrough
+  wildcardPolicy: None
