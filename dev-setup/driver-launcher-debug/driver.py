@@ -29,7 +29,7 @@ with open('output_driver.env', 'w') as l:
     args = driver['spec']['containers'][1]['args']
 
 
-    type = "ROOT_DRIVER" if "root-driver" in annotations['workflows.argoproj.io/node-name'] else "CONTAINER"
+    type = "ROOT_DAG" if "root-driver" in annotations['workflows.argoproj.io/node-name'] else "CONTAINER"
     l.write(f"--type={type}\n")
 
     l.write(f"--pipeline_name={args[args.index('--pipeline_name')+1]}\n")
@@ -39,7 +39,7 @@ with open('output_driver.env', 'w') as l:
     write_json("component", l)
     write_json("task", l)
 
-    if type == "ROOT_DRIVER":
+    if type == "ROOT_DAG":
         write_json("runtime_config", l)
         l.write(f"--iteration_count_path={args[args.index('--iteration_count_path')+1]}\n")
         l.write(f"--execution_id_path={args[args.index('--execution_id_path')+1]}\n")

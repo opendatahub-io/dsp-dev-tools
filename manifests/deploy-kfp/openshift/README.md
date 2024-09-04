@@ -79,8 +79,8 @@ DRIVER_IMAGE=quay.io/opendatahub/ds-pipelines-driver:latest
 
 
 # from repo root
-cd manifests/deploy-kfp/openshift/openshift/base
-var=$LAUNCHER_IMAGE yq -i '.spec.template.spec.containers[0].env[0].value = strenv(var)' api-server-patch.yaml
-var=$DRIVER_IMAGE yq -i '.spec.template.spec.containers[0].env[1].value = strenv(var)' api-server-patch.yaml
-
+cd manifests/deploy-kfp/openshift/base
+var=$LAUNCHER_IMAGE yq -i '.spec.template.spec.containers[0].env[1].value = strenv(var)' api-server-patch.yaml
+var=$DRIVER_IMAGE yq -i '.spec.template.spec.containers[0].env[0].value = strenv(var)' api-server-patch.yaml
+kustomize build . | oc -n kubeflow apply -f -
 ```
