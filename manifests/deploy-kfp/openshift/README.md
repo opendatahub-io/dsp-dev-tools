@@ -48,12 +48,12 @@ kustomize edit set image ${SRC}=${TARGET}
 
 # api-server
 SRC=gcr.io/ml-pipeline/api-server
-TARGET=opendatahub/ds-pipelines-api-server:latest
+TARGET=quay.io/opendatahub/ds-pipelines-api-server:latest
 kustomize edit set image ${SRC}=${TARGET}
 
-# Persistent Agent
+# Persistence Agent
 SRC=gcr.io/ml-pipeline/persistenceagent
-TARGET=quay.io/hukhan/persistenceagent:latest
+TARGET=quay.io/opendatahub/persistenceagent:latest
 kustomize edit set image ${SRC}=${TARGET}
 
 # frontend
