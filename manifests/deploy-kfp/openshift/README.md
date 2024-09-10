@@ -24,6 +24,11 @@ git clone https://github.com/opendatahub-io/dsp-dev-tools.git
 cd manifests/deploy-kfp/openshift/base
 ./add_resources.sh $REPO $BRANCH
 kustomize build . | oc -n kubeflow apply -f -
+
+
+# Speed up the remote pulls by usinzg kustomize localize
+kustomize localize . builddir 
+kustomize build . | oc -n kubeflow apply -f -
 ```
 
 ### Deploy with auth/multi-user
@@ -76,7 +81,6 @@ These are set as ENV vars to api server, so they need to be changed manually:
 ```bash
 LAUNCHER_IMAGE=quay.io/opendatahub/ds-pipelines-launcher:latest
 DRIVER_IMAGE=quay.io/opendatahub/ds-pipelines-driver:latest
-
 
 # from repo root
 cd manifests/deploy-kfp/openshift/base
