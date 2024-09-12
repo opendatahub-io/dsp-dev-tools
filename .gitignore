@@ -3,3 +3,6 @@ external-connection-setup/output
 external-connection-setup/output/*
 dev-setup/output
 dev-setup/output/*
+credentials.json
+details.json
+token.pickle
