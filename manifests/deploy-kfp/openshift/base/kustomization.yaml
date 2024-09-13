@@ -11,3 +11,4 @@ patchesStrategicMerge:
 - api-server-patch.yaml
 - deploy-patch.yaml
 - cache-deploy-patch.yaml
+- ui-patch.yaml

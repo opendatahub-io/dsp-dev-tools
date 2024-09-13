@@ -19,13 +19,21 @@ BRANCH=master
 
 ### Deploy base no auth/multi-user
 
+Navigate to the base folder
+
 ```bash
 git clone https://github.com/opendatahub-io/dsp-dev-tools.git
 cd manifests/deploy-kfp/openshift/base
+```
+
+Add upstream dependencies and deploy
+```bash
 ./add_resources.sh $REPO $BRANCH
 kustomize build . | oc -n kubeflow apply -f -
+```
 
-
+Cache the dependencies for faster builds
+```bash
 # Speed up the remote pulls by usinzg kustomize localize
 kustomize localize . builddir 
 kustomize build . | oc -n kubeflow apply -f -
