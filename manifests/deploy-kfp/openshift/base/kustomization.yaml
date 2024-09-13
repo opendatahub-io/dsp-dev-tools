@@ -6,6 +6,7 @@ namespace: kubeflow
 resources:
 - route.yaml
 - namespace.yaml
+- scc.yaml
 
 patchesStrategicMerge:
 - api-server-patch.yaml
