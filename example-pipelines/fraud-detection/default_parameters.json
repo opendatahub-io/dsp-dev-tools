@@ -1,4 +1,4 @@
 {
-    "datastore": {"url": "https://raw.githubusercontent.com/rh-aiservices-bu/fraud-detection/main/data/card_transdata.csv"},
+    "datastore": {"url": "https://github.com/rh-aiservices-bu/fraud-detection/raw/9507695ebdb98160b837ea80186f1ad79f071858/data/card_transdata.csv"},
     "hyperparameters": {"epochs": 2}
 }
