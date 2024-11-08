@@ -6,7 +6,7 @@ ARG KUSTOMIZE_VERSION="v5.5.0"
 ARG MC_VERSION="mc.RELEASE.2024-11-05T11-29-45Z"
 
 # Put useful tools here
-RUN dnf install -y s3cmd wget pip &&\
+RUN dnf install -y s3cmd wget pip podman skopeo &&\
     # Install yq
     curl -o /usr/local/bin/yq -L https://github.com/mikefarah/yq/releases/download/${YQ_VERSION}/yq_linux_amd64 &&\
     chmod +x /usr/local/bin/yq &&\
