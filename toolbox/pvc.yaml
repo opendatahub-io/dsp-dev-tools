@@ -1,0 +1,11 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: toolbox-storage
+spec:
+  resources:
+    requests:
+      storage: 50Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
